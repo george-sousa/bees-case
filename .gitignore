@@ -1,0 +1,5 @@
+/data-lake/bronze/open_brewery_api/*
+/data-lake/silver/breweries/*
+/data-lake/gold/breweries_summary/*
+/logs/*
+/dags/__pycache__/*
