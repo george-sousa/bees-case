@@ -42,9 +42,9 @@ from_email = "Your Name <your.email@gmail.com>"
 smtp_mail_from = your.email@gmail.com
 ```
 
-### 3. Check the status of the containers
+### 3. Check the status of the containers. If a problem appears, check this [guide](https://bobcares.com/blog/docker-error-container-is-unhealthy/)
 ```
-# It will take some minutes for every container to be online. Check their status and confirm that they are healthy. If a problem appears, check this [guide](https://bobcares.com/blog/docker-error-container-is-unhealthy/)
+# It will take some minutes for every container to be online. Check their status and confirm that they are healthy. 
 docker ps
 ```
 
