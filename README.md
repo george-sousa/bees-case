@@ -82,6 +82,13 @@ I opted to fetch the API using the highest possible value of data within a page,
 
 For this project, one of the tasks was "Transform the data to a columnar storage format such as parquet or delta, and partition it by brewery location." I had to make a decision about what "brewery location" should mean in this context, since there were no field with this specific name. After analyzing the relevants fields from the API data and considering best practices for partitioning (low cardinality, even distribution, etc), I came to the conclusion that “state” should be the field used for partitioning. Of couse, on a production environment the wisest decision would be asking a colleague, but since the purpose of this case is to evaluete my habilities, I thought that working like this in this specific project would make more sense.
 
+### Transformations reasoning
+As instructed, I should inform the reasoning behind each transformation I made on the silver layer.
+
+- Normalize the 'state' field: Removes accents and special characters from state names to ensure consistent partition names and avoid filesystem issues or mismatches.
+- Drop Invalid Records: Ensures data quality by removing rows with missing critical fields — "id" and "state". These are necessary to identify and group records.
+- Add Ingestion Date: Adds metadata to track when the data was ingested. This helps with lineage and auditing.
+
 ## 🔔 Monitoring & Alerting
 
 ### Airflow-Level Monitoring
